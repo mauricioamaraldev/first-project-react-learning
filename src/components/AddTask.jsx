@@ -17,17 +17,20 @@ function AddTask({ onAddTaskSubmit }) {
         placeholder="Digite a descrição da tarefa"
         className="border border-slate-300 outline-slate-400 px-4 py-2"
         value={description}
-        onChange={(event) => setDescription(event.target.description)}
+        onChange={(event) => setDescription(event.target.value)}
       />
       <button
         onClick={() => {
+          if (!title.trim() || !description.trim()) {
+            return alert("Todos os campos são obrigatorios")
+          }
+
           onAddTaskSubmit(title, description)
           setTitle("")
           setDescription("")
         }}
         className="bg-slate-300 text-white px-4 py-2 rounded-m font-medium">
         Adicionar
-
       </button>
     </div>
   )
