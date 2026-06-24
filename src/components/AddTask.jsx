@@ -15,8 +15,8 @@ function AddTask({ onAddTaskSubmit }) {
       <Input
         type="text"
         placeholder="Digite o descrição da tarefa"
-        value={title}
-        onChange={(event) => setTitle(event.target.value)}
+        value={description}
+        onChange={(event) => setDescription(event.target.value)}
       />
       <button
         onClick={() => {
